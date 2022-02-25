@@ -1,0 +1,119 @@
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+
+<head>
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    .note {
+      text-align: center;
+      height: 80px;
+      background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+      color: #fff;
+      font-weight: bold;
+      line-height: 80px;
+    }
+
+    .form-content {
+      padding: 5%;
+      border: 1px solid #ced4da;
+      margin-bottom: 2%;
+    }
+
+    .form-control {
+      border-radius: 1.5rem;
+    }
+
+    .btnSubmit {
+      border: none;
+      border-radius: 1.5rem;
+      padding: 1%;
+      width: 20%;
+      cursor: pointer;
+      background: #0062cc;
+      color: #fff;
+    }
+
+    .menu {
+      top: 50px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<br><br><br><br><br><br>
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="container register-form">
+    <div class="form">
+      <div class="note">
+        <p>REGISTER YOUR BUSINESS!!</p>
+      </div>
+      <div class="form-content">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              {% render_field companyForm.email class="form-control" placeholder="Email" %}
+            </div>
+            <div class="form-group">
+              {% render_field companyForm.comname class="form-control" placeholder="Company Name" %}
+            </div>
+
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              {% render_field companyForm.comowner class="form-control" placeholder="Company Owner" %}
+            </div>
+            <div class="form-group">
+              {% render_field companyForm.address class="form-control" placeholder="Address" %}
+            </div>
+
+
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              {% render_field companyForm.city class="form-control" placeholder="City" %}
+            </div>
+            <div class="form-group">
+              {% render_field companyForm.state class="form-control" placeholder="state" %}
+            </div>
+
+
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              {% render_field companyForm.pincode class="form-control" placeholder="Pincode" %}
+            </div>
+            <div class="form-group">
+              {% render_field companyForm.shoplicense class="form-control" placeholder="Shop License" %}
+            </div>
+
+
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              {% render_field companyForm.fssai class="form-control" placeholder="Fssai Certificate" %}
+            </div>
+            <div class="form-group">
+              {% render_field companyForm.gsti_pan class="form-control" placeholder="GSTIN/PAN" %}
+            </div>
+
+
+          </div>
+        </div>
+        <button type="submit" class="btnSubmit">REGISTER</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+
+{% endblock content %}
