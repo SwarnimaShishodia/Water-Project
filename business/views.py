@@ -23,19 +23,19 @@ def user_register(request):
         pass2=request.POST.get('pass2')
         if(pass1!=pass2):
             messages.warning(request,'Passwords do not match. Try Again!!')
-            return redirect('register')
+            return redirect('signup_business')
         elif(User.objects.filter(username=uname).exists()):
             messages.warning(request, 'Username not available')
-            return redirect('register')
+            return redirect('signup_business')
         elif(User.objects.filter(email=email).exists()):
             messages.warning(request, 'The user already exists.')
-            return redirect('register')
+            return redirect('signup_business')
         else:
             user= User.objects.create_user(first_name=fname,last_name=lname,username=uname,email=email,password=pass1)
             user.save()
             messages.success(request,'You are successfully registered!')
-            return redirect('login')
-    return render(request,'register.html')
+            return redirect('login_business')
+    return render(request,'signup_business.html')
 
 def user_login(request):
     if(request.method=='POST'):
@@ -44,12 +44,12 @@ def user_login(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('plan')
+            return redirect('companyregister')
         else:
             messages.warning(request,'User is not registered')
-            return redirect('register')
+            return redirect('signup_business')
 
-    return render(request,'login.html')
+    return render(request,'login_business.html')
 
 def user_logout(request):
     logout(request)
