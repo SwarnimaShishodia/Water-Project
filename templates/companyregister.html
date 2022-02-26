@@ -1,8 +1,10 @@
 {% load static %}
 {% load widget_tweaks %}
 {% block content %}
+{% load static %}
 
 <head>
+  <link rel="stylesheet" href={% static 'companyregister.css' %}>
   <style media="screen">
     a:link {
       text-decoration: none;
@@ -21,6 +23,7 @@
       padding: 5%;
       border: 1px solid #ced4da;
       margin-bottom: 2%;
+     
     }
 
     .form-control {
@@ -50,14 +53,14 @@
 </head>
 <br><br><br><br><br><br>
 
-<form method="post" enctype="multipart/form-data">
+<form method="post" enctype="multipart/form-data" >
   {% csrf_token %}
   <div class="container register-form">
     <div class="form">
       <div class="note">
-        <p>REGISTER YOUR BUSINESS!!</p>
+        <p >REGISTER YOUR BUSINESS!!</p>
       </div>
-      <div class="form-content">
+      <div class="form-content" class="testing" >
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
@@ -92,17 +95,25 @@
             <div class="form-group">
               {% render_field companyForm.pincode class="form-control" placeholder="Pincode" %}
             </div>
-            <div class="form-group">
-              {% render_field companyForm.shoplicense class="form-control" placeholder="Shop License" %}
-            </div>
+          
 
 
           </div>
+
+
           <div class="col-md-6">
+
             <div class="form-group">
+              <p style="font-weight:0;">Shop License</p>
+              {% render_field companyForm.shoplicense class="form-control" placeholder="Shop License" %}
+            </div>
+
+            <div class="form-group">
+              <p style="font-weight:0;">Fssai Certificate</p>
               {% render_field companyForm.fssai class="form-control" placeholder="Fssai Certificate" %}
             </div>
             <div class="form-group">
+              <p style="font-weight:0;">GSTIN/PAN</p>
               {% render_field companyForm.gsti_pan class="form-control" placeholder="GSTIN/PAN" %}
             </div>
 

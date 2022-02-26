@@ -1,138 +1,139 @@
-
-{% block title %}
+{% include 'base.html' %} {% block title %}
 <title>subscribe</title>
-{% endblock title %}
-
-{% block body%}
+{% endblock title %} {% block body%}
 
 <html>
+  <head>
+    <title>Form Validation</title>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Subscribe</h1>
+      < class="form1">
+        <!--	Registration Form<br>!-->
+        <form method="post" action="">
+          {%csrf_token%}
+          <input
+            type="text"
+            id="req1"
+            placeholder="Name"
+            name="Name"
+          /><br /><br />
+          <!--<input type="text" id="req2" placeholder="Lastname"><br><br>-->
+          <input
+            type="text"
+            id="req3"
+            placeholder="Email address"
+            name="email"
+          /><br /><br />
+          <!--<input type="text" id="req4" placeholder="Contact number" name="phone"><br><br>-->
+          <input
+            type="mobile no."
+            id="req5"
+            placeholder="Mobile no."
+            name="mno"
+          /><br /><br />
 
-<head>
-  <title>Form Validation</title>
-</head>
-<body>
-	<div class="main">
-		<h1>Subscribe</h1>
-		<div class="form1">
-		<!--	Registration Form<br>!-->
-			<form method="post" action="">
-				{%csrf_token%}
-				<input type="text" id="req1" placeholder="Name" name="Name"><br><br>		
-				<!--<input type="text" id="req2" placeholder="Lastname"><br><br>-->
-				<input type="text" id="req3" placeholder="Email address" name="email"><br><br>
-				<!--<input type="text" id="req4" placeholder="Contact number" name="phone"><br><br>-->
-				<input type="mobile no." id="req5" placeholder="Mobile no." name="mno"><br><br>
+          <input
+            type="address"
+            id="req6"
+            placeholder="Address"
+            name="add"
+          /><br /><br />
 
-                <input type="address" id="req6" placeholder="Address" name="add"><br><br>
-				
-                <div class="padding-x-md padding-y-xl flex flex-center">
-				<input type="submit" value="Pay" class="btn btn-primary"><br><br>
-  
-
-    
-  </div>
-</div>
-
-
-			</form>
-		
-		</div>	
-	</div>
-
-
-
-</body>
+          <div class="padding-x-md padding-y-xl flex flex-center">
+            <a href="payment"
+              ><input type="submit" value="Pay" class="btn btn-primary" /></a
+            ><br /><br />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
 
 <style>
-body{
-			background-image: url(bg.jpg);
-			background-color: skyblue;
-			background-repeat: no-repeat;
-			background-size: 1500px 620px;
-			text-align: center;
-			font-size: 22px;
-			color: White;
-		}
-		h1{
-			color: white;
-			font-size: 60px;
-			font-family: cursive;
-		}
-		.form1{
-			background:rgba(0,0,0,0.6);
-			padding: 24px;
-			margin-top:0px;
-			width: 28%;
-			position: absolute;
-			left:34%;
-			border-radius: 15px;
-		}
-		input{
-			width: 330px;
-			height: 30px;
-			border-radius: 7px;
-			text-align: center;
-		}
-		input[type="text"]{
-			font-size: 18px;
-		}
-		input[type="email"]{
-			font-size: 18px;
-		}
-		input[type="submit"]{
-			font-size: 20px;
-			height: 40px;
-			background-color: #00FF7F;
+  body {
+    background-image: url(bg.jpg);
+    background-color: skyblue;
+    background-repeat: no-repeat;
+    background-size: 1500px 620px;
+    text-align: center;
+    font-size: 22px;
+    color: White;
+  }
+  h1 {
+    color: white;
+    font-size: 60px;
+    font-family: cursive;
+  }
+  .form1 {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 24px;
+    margin-top: 0px;
+    width: 28%;
+    position: absolute;
+    left: 34%;
+    border-radius: 15px;
+  }
+  input {
+    width: 330px;
+    height: 30px;
+    border-radius: 7px;
+    text-align: center;
+  }
+  input[type="text"] {
+    font-size: 18px;
+  }
+  input[type="email"] {
+    font-size: 18px;
+  }
+  input[type="submit"] {
+    font-size: 20px;
+    height: 40px;
+    background-color: #00ff7f;
+  }
 
-		}
+  input[type="submit"]:hover {
+    color: white;
+    background-color: blue;
+  }
+  select {
+    size: 400px;
+    height: 30px;
+    width: 252px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 18px;
+  }
+  input[type="radio"] {
+    font-size: 14px;
+    size: 10px;
+    height: 12px;
+  }
 
-		input[type="submit"]:hover{
-			color:white;	
-			background-color: blue;	
-		}
-		select{
-			size:400px;
-			height: 30px;
-			width: 252px;
-			border-radius: 20px;
-			text-align: center;
-			font-size: 18px;
-		}
-		input[type="radio"]
-		{
-			font-size: 14px;
-			size: 10px;
-			height:12px;
-		}
+  .btn-gradient-1 {
+    border-width: 4px;
+    border-style: solid;
+    border-image: linear-gradient(to right, darkblue, darkorchid) 1;
+  }
+</style>
 
-        .btn-gradient-1 {
-  border-width: 4px;
-  border-style: solid;
-  border-image: linear-gradient(to right, darkblue, darkorchid) 1;
-}
-
-
-        </style>
-
-        <script>
-	
-		function empty(){
-			//var error=""
-			if(document.getElementById('req1').value=="")
-			{
-				//error+="Enter Firstname";
-				alert("Enter first name");
-			}/*
+<script>
+  function empty() {
+    //var error=""
+    if (document.getElementById("req1").value == "") {
+      //error+="Enter Firstname";
+      alert("Enter first name");
+    } /*
 			if(document.getElementById('req2').value=="")
 			{
 				alert("Enter last name");
 			}*/
-			if(document.getElementById('req3').value=="")
-			{
-				alert("Enter email address");
-			}
-			/*
+    if (document.getElementById("req3").value == "") {
+      alert("Enter email address");
+    }
+    /*
 			if(document.getElementById('req4').value=="")
 			{
 				alert("Enter contact number");
@@ -141,71 +142,52 @@ body{
 			{
 				alert('Note : Contact no must be 10 digits')
 			}*/
-			if(document.getElementById('req5').value=="")
-			{
-				alert("Password");
-				return false;
-			}
-		}
+    if (document.getElementById("req5").value == "") {
+      alert("Password");
+      return false;
+    }
+  }
 
-
-		function emailValidate(element,message)
-	{
-		var emailExp=/^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-Z0]{2,4}$/;
-		if(element.value.length>0)
-		{
-			if(element.value.match(emailExp))
-			{
-				return true;
-			}
-			else
-			{
-				alert(message);
-				element.focus();
-				return false;
-			}
-			return true;
-		}
-		/*else
+  function emailValidate(element, message) {
+    var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-Z0]{2,4}$/;
+    if (element.value.length > 0) {
+      if (element.value.match(emailExp)) {
+        return true;
+      } else {
+        alert(message);
+        element.focus();
+        return false;
+      }
+      return true;
+    }
+    /*else
 		{
 				alert('Please fill email id');
 				element.focus();
 				return false;
 			
 		}*/
-	}
+  }
 
-	function isNumeric(element,message)
-	{
-		var numericExpression=/^[0-9]+$/;
-		if(element.value.match(numericExpression))
-		{
-			return true;
-		}
-		else{
-			alert(message);
-			element.focus();
-			return false;
-		}
-	}
-	function Selection(element,message)
-	{
-
-		if(element.value == "Gender")
-		{
-			alert(message);
-			element.focus();
-			return false;
-		}
-		else{
-		
-			return true;
-		}
-		
-	}
-
- 
-
+  function isNumeric(element, message) {
+    var numericExpression = /^[0-9]+$/;
+    if (element.value.match(numericExpression)) {
+      return true;
+    } else {
+      alert(message);
+      element.focus();
+      return false;
+    }
+  }
+  function Selection(element, message) {
+    if (element.value == "Gender") {
+      alert(message);
+      element.focus();
+      return false;
+    } else {
+      return true;
+    }
+  }
 </script>
 
-{% endblock body %}
+{% endblock body %} {% comment %} {% include 'footer.html' %} {% endcomment %}
