@@ -11,6 +11,12 @@ from business.models import Supplier
 def index(request):
      return render(request,'home.html')
 
+def aboutUs(request):
+     return render(request,'aboutUs.html')
+
+def trying(request):
+     return render(request,'trying.html')
+
 
 def user_register(request):
     if(request.method=='POST'):
@@ -81,7 +87,7 @@ def feedback(request):
     return render(request,'feedback.html')
 
 
-def reviews(request):
+def trying(request):
     r=Reviews.objects.all()
     r=r[::-1]
     if request.method == 'POST':
@@ -90,8 +96,8 @@ def reviews(request):
         post=Reviews(content=content)
         post.save()
                 
-        return redirect('reviews')
-    return render(request, 'reviews.html', {'rev':r})
+        return redirect('/')
+    return render(request, 'trying.html')
 
 
 

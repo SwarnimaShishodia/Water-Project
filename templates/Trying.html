@@ -1,0 +1,82 @@
+ {% comment %} {% extends 'base.html' %}  {% endcomment %}
+{% load static %}
+{% block title %}
+<title>Trying</title>
+<html>
+
+<head>
+    <link rel="stylesheet" href={% static 'trying.css' %}>
+    {% comment %} <script src={% static 'trying.js' %}></script> {% endcomment %}
+    {% comment %} <script src="{% static 'trying.js' %}" type="javascript"></script> {% endcomment %}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script>
+      (function($) {
+        $(function() {
+        $(".form").on('click', function(){
+            $(this).addClass('active');
+           });
+          });
+    })(jQuery);
+          
+          
+    (function($) {
+      $(function() {
+          $(".submit").on('click', function() {
+            $(this).parent().parent().hide(300);
+            $(".ok_message").addClass("active");
+          });
+        });
+      })(jQuery);
+
+
+      (function($) {
+      $(function() {
+          $(".ok_message").on('click', function() {
+            $(this).removeClass("active");
+            $(".form").removeClass("active").show();
+            window.location.replace("/");
+          });
+        });
+      })(jQuery);
+      
+    </script>
+    
+     {% block style %}
+    <style>
+       
+    </style>
+    {% endblock style %} 
+     
+
+</head>
+{% endblock title %}   
+
+    
+{% block body %}
+    <body>
+        
+        <div class="form">
+            <div class="mail"></div>
+            <h1>Mail form</h1>
+
+            <form method="post" action="review">
+              {% csrf_token %}
+              <input type="text" placeholder="Your name"/>
+              
+              <input type="text" placeholder="E-mail"/>
+              
+              <textarea name="content" id="" cols="30" rows="10" placeholder="Message"></textarea>
+              
+              <button style="margin-left:20%;"class="submit" type="submit" >Send</button>
+              
+            </form>
+          </div>
+          
+          <div class="ok_message">
+          <span>Thankyou for your feedback!</span></div>
+         
+    </body>
+{% endblock body %}
+
+
+</html>

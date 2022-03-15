@@ -1,0 +1,346 @@
+{% include 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    {% block title %}
+    <title>About Us</title>
+    {% endblock title %} {% block style %}
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        color: #333;
+        line-height: 2;
+        background-color: aliceblue;
+        font-family: "Lato", sans-serif;
+      }
+
+      .active {
+        border-bottom: 2px solid aqua;
+      }
+
+      .navbar,
+      .container-fluid {
+        background-color: transparent;
+      }
+
+      .nav-item a {
+        color: white;
+      }
+
+      .navbar-brand {
+        color: white;
+      }
+
+      #header {
+        background: rgb(0, 0, 0);
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 1) 0%,
+          rgba(0, 71, 106, 1) 0%,
+          rgba(0, 33, 255, 1) 100%,
+          rgba(0, 110, 255, 1) 100%
+        );
+        min-height: 65%;
+        color: white;
+      }
+
+      h1 span {
+        color: aqua;
+      }
+
+      h1 {
+        font-size: 4rem;
+      }
+
+      .dark {
+        padding: 20px;
+        border-radius: 10px;
+        border: transparent;
+        background-color: rgb(1, 9, 54);
+        color: white;
+        width: 200px;
+        z-index: 2;
+      }
+
+      .aqua {
+        padding: 20px;
+        border-radius: 10px;
+        border: transparent;
+        background-color: rgb(1, 202, 202);
+        color: rgb(1, 9, 54);
+        width: 300px;
+        z-index: 2;
+      }
+
+      h4 span {
+        background-color: rgb(191, 248, 248);
+        border-bottom-left-radius: 20px;
+      }
+
+      h4 {
+        line-height: 3;
+      }
+
+      #plan {
+        margin-left: 5%;
+        width: 95%;
+        height: 100%;
+      }
+
+      .card {
+        border-radius: 10px;
+        border: transparent;
+        padding: 5% 7%;
+      }
+
+      .card-body {
+        margin-left: 2%;
+      }
+
+      .card-text {
+        color: gray;
+      }
+
+      .btn-linear {
+        text-align: right;
+        margin-right: 1%;
+      }
+
+      .card:hover {
+        background-color: rgb(231, 253, 255);
+        cursor: pointer;
+      }
+
+      #conclusion {
+        background-image: linear-gradient(
+          to bottom,
+          aliceblue,
+          rgb(216, 223, 230),
+          rgb(216, 223, 230)
+        );
+        width: 100%;
+        height: 95%;
+      }
+
+      table th {
+        color: rgb(1, 9, 54);
+        line-height: 2;
+      }
+
+      table td {
+        line-height: 2;
+        padding-right: 60px;
+      }
+    </style>
+    {% endblock style%}
+  </head>
+
+  {% block body %}
+  <body>
+    <section id="header">
+      {% comment %} <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">DOCBUDDY</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Solutions</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Pricing</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav> {% endcomment %}
+      <br /><br />
+      <div class="row" style="width: 80%; margin: auto">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <h1>Custom<br /><span>Pricing</span></h1>
+        </div>
+        <div
+          class="col-lg-6 col-md-6 col-sm-6"
+          style="border-left: 1px solid dodgerblue; padding-left: 7%"
+        >
+          <div>
+            <p style="line-height: 2">
+              PAANI's flexible pricing plans are based on your needs. We offer monthly or annual
+              pricing packages per provider, giving you the ability to easily
+              customize your plan. Start your journey with us today and we
+              will provide a pricing plan that best fits your specific needs.
+            </p>
+          </div>
+          {% comment %} <div>
+            <button class="dark">TRY IT FREE</button>
+            <button class="aqua">REQUEST A DEMO</button>
+          </div> {% endcomment %}
+        </div>
+      </div>
+    </section>
+
+
+    <div><h4><span>CHOO</span>SE THE RIGHT PLAN FOR YOU</h4></div>
+
+    {% if request.user.is_authenticated %}
+        <a href="plan"><button  class="aqua" style="margin-left:40%; font-weight:bold; color:white;">CLICK TO EXPLORE PLANS</button></a>
+    {% else %}
+        <a href="/"><button  class="aqua" style="margin-left:40%; font-weight:bold; color:white;">LOGIN TO PROCEED</button></a>
+    {% endif %}
+    <br>
+    <br>
+    <br>
+    <br>
+    {% comment %} <section id="plan">
+      <h4><span>CHOO</span>SE THE RIGHT PLAN FOR YOU</h4>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card" style="width: 18rem">
+            <div class="card-body">
+              <h2 class="card-title">CLINICS</h2>
+              <p class="card-text">
+                With supporting text below as a natural lead-in to additional
+                content.
+              </p>
+              <a href="#" class="btn btn-linear">FIND OUT MORE</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card" style="width: 18rem">
+            <div class="card-body">
+              <h2 class="card-title">SURGERY CLINICS</h2>
+              <p class="card-text">
+                With supporting text below as a natural lead-in to additional
+                content.
+              </p>
+              <a href="#" class="btn btn-linear">FIND OUT MORE</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card" style="width: 18rem">
+            <div class="card-body">
+              <h2 class="card-title">HOSPITALS</h2>
+              <p class="card-text">
+                With supporting text below as a natural lead-in to additional
+                content.
+              </p>
+              <a href="#" class="btn btn-linear">FIND OUT MORE</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br /><br />
+      <p style="text-align: center; color: gray">
+        *Monthly and Annual Plans available
+      </p>
+      <br /><br />
+    </section>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <section id="conclusion">
+      <div class="row" style="margin: auto; width: 80%">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <p style="font-size: 20px">
+            See the time savings for yourself with a
+          </p>
+          <h1>free 15-day trial.</h1>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <button class="dark">TRY IT FREE</button>
+          <button class="aqua">REQUEST A DEMO</button>
+        </div>
+      </div>
+      <br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <div class="row">
+        <div class="col-lg-6 col-md-6">
+          <h2 style="color: rgb(1, 9, 54); font-weight: bolder">DOCBUDDY</h2>
+          <p>&copy; 2019 DocBuddy, Inc.</p>
+        </div>
+        <div class="col-lg-6 col-md-6">
+          <footer>
+            <table>
+              <tr>
+                <th>DOCBUDDY</th>
+                <th>ABOUT</th>
+                <th>CONTACT</th>
+              </tr>
+              <tr>
+                <td>Features</td>
+                <td>About Us</td>
+                <td>Request Demo</td>
+              </tr>
+              <tr>
+                <td>Solutions</td>
+                <td>Privacy Policy</td>
+                <td>15-Day Trial</td>
+              </tr>
+              <tr>
+                <td><span class="active">Pricing</span></td>
+                <td>Terms of Use</td>
+              </tr>
+              <tr>
+                <td>Success Stories</td>
+              </tr>
+            </table>
+          </footer>
+        </div>
+      </div>
+    </section> {% endcomment %}
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script> 
+  </body>
+  {% endblock body %}
+</html>
+{% include 'footer.html' %}

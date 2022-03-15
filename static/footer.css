@@ -10,7 +10,7 @@ ul {
   border-bottom: 1px solid #373636;
 }
 .single-cta i {
-  color: #ff5e14;
+  color: linear-gradient(to right, #83eaf1, #63a4ff);;
   font-size: 30px;
   float: left;
   margin-top: 8px;
@@ -80,7 +80,7 @@ ul {
   background: #55ACEE;
 }
 .google-bg{
-  background: #ff5e14;
+  background: linear-gradient(to right, #83eaf1, #63a4ff);;
 }
 .footer-widget-heading h3 {
   color: #fff;
@@ -96,7 +96,7 @@ ul {
   bottom: -15px;
   height: 2px;
   width: 50px;
-  background: #ff5e14;
+  background: linear-gradient(to right, #83eaf1, #63a4ff);
 }
 .footer-widget ul li {
   display: inline-block;
@@ -105,7 +105,7 @@ ul {
   margin-bottom: 12px;
 }
 .footer-widget ul li a:hover{
-  color: #ff5e14;
+  color:linear-gradient(to right, #83eaf1, #63a4ff); 
 }
 .footer-widget ul li a {
   color: #878787;

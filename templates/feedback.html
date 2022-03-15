@@ -1,9 +1,11 @@
+{% include 'base.html' %}
 {% block title %}
 <title>feedback</title>
 {% endblock title %}
 
 {%block body%}
-<form method="post" action="feedback">
+<div>
+<form method="post" action="feedback" style="margin-top:5%">
   {%csrf_token%}
   <div>
   <img src="https://cdn4.iconfinder.com/data/icons/basic-user-interface-elements/700/mail-letter-offer-256.png" alt="icon">
@@ -14,17 +16,21 @@
 				<!--<input type="text" id="req4" placeholder="Contact number" name="phone"><br><br>-->
         <input type="address" id="req6" placeholder="Address" name="address"><br><br>
 				<input type="mobile no." id="req5" placeholder="Mobile no." name="mobile"><br><br>
+        <input type="text" id="req1" placeholder="Review" name="content"><br><br>
 
                 
 
   <!--<input type="text" placeholder="Name (required)" required name="name">
   <input type="text" placeholder="Address (required)" required name="address">
   <input type="mobile no." placeholder="Mobileno. (required)" required name="mobile">-->
-  <input style="text-align:center" type="text" id="req1" placeholder="Review" name="content" size="70" style="width:200px;"><br><br>
-  <input style="background-color:black" type="submit" value="Raise a complain" class="btn btn-primary"><br><br>
+  {% comment %} <input style="text-align:center" type="text" id="req1" placeholder="Review" name="content" size="70" style="width:200px;"><br><br> {% endcomment %}
+  <input style="background-color:black; margin-left:40%;" type="submit" value="Raise a complain" class="btn btn-primary"><br><br>
   <!--<textarea placeholder="Subject (required)" required name="content"></textarea>
   <input type="submit" value="Send">-->
 </form>
+<br>
+<br>
+</div>
 
 
 {%block style%}
@@ -37,9 +43,10 @@
 }
 
 body {
+
   background-color: #d9f0ff;
   height:100vh;
-  display: flex;
+  
   justify-content: center;
   align-items:center;
 }
@@ -104,3 +111,4 @@ form > input[type="submit"]:hover {
 {%endblock style%}
 
 {%endblock body%}
+{% include 'footer.html' %}
