@@ -166,14 +166,15 @@
 {%endblock style%}
 
 {%block body%}
-<div class="circle crc1"></div>
+{% comment %} <div class="circle crc1"></div>
 <div class="circle crc2"></div>
-<div class="circle crc3"></div>
+<div class="circle crc3"></div> {% endcomment %}
 
-<div class="phone">
+<div class="phone" style="height:70%;">
 
     <div class="wrapper">
-        <h1 style="text-align:center; color:black; font-family: Roboto;">Give feedback <span style="text-align:center; color:#88dc9e; font-family: Roboto;">Care to share more about it?</span></h1><br>
+        <h1 style="text-align:center; color:black; font-family: Roboto;">Give feedback </h1><br>
+        <h3 style="text-align:center; color:#00bfff; font-family: Roboto;">Care to share more about it?</h3>
 
         <h2 ></h2><br>
     </div>
@@ -181,8 +182,8 @@
     <form method="post" action="reviews">
         {% csrf_token %}
         <div style="text-align:center">
-        <input style="text-align:center; border:#88dc9e 5px solid;height:70px; " type="text" id="req1" placeholder="Review" name="content" size="70" style="width:200px;"><br><br>
-        <input style="background-color:#88dc9e; border:#88dc9e 5px solid; " type="submit" value="PUBLISH FEEDBACK" class="btn btn-primary"><br><br>
+        <input style="text-align:center; border:#00bfff 5px solid;height:70px; " type="text" id="req1" placeholder="Review" name="content" size="70" style="width:200px;"><br><br>
+        <input style="background-color:#00bfff; border:#00bfff 5px solid; " type="submit" value="PUBLISH FEEDBACK" class="btn btn-primary"><br><br>
     </div>
     </form>
     <hr style="border: black 5px solid">
