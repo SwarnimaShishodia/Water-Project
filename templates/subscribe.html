@@ -1,18 +1,23 @@
 {% include 'base.html' %} {% block title %}
 <title>subscribe</title>
 {% endblock title %} {% block body%}
+{% load static %}
 
 <html>
   <head>
     <title>Form Validation</title>
   </head>
   <body>
+    <br>
+    <br>
     <div class="main">
-      <h1>Subscribe</h1>
-      < class="form1">
+      <img src="{% static "fssai/sub.png" %}" alt="something" style="height:100%; width:30%; margin-left:10%;">
+     
         <!--	Registration Form<br>!-->
         <form method="post" action="">
           {%csrf_token%}
+          <h1 style="font-family: Sans-serif">Subscribe</h1>
+
           <input
             type="text"
             id="req1"
@@ -43,16 +48,34 @@
 
           <div class="padding-x-md padding-y-xl flex flex-center">
             <a href="payment"
-              ><input type="submit" value="Pay" class="btn btn-primary" /></a
+              ><input type="submit" value="Pay" class="btn btn-primary" style="background-color:black";/></a
             ><br /><br />
           </div>
         </form>
       </div>
+      <br>
+      <br>
     </div>
   </body>
 </html>
 
 <style>
+  .main{
+     display:flex;
+  }
+  form{
+    {% comment %} background-color:blue; {% endcomment %}
+    margin-left:15%;
+    margin-right:10%;
+     background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 71, 106, 1) 0%,
+      rgba(0, 33, 255, 1) 100%,
+      rgba(0, 110, 255, 1) 100%
+    ); 
+    padding:3%
+  }
   body {
     background-image: url(bg.jpg);
     background-color: skyblue;
@@ -191,3 +214,4 @@
 </script>
 
 {% endblock body %} {% comment %} {% include 'footer.html' %} {% endcomment %}
+{% comment %} {% include 'footer.html' %} {% endcomment %}

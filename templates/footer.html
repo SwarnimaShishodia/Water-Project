@@ -1,4 +1,4 @@
-
+{% comment %} 
 <!DOCTYPE html>
 {% comment %} <html>
 
@@ -146,7 +146,7 @@
                                 elit,Lorem ipsum dolor sit amet.</p>
                             </div>
                             <div class="footer-social-icon">
-                                <span>Follow us</span>
+                                {% comment %} <span>Follow us</span> {% endcomment %}
                                 <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
                                 <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
                                 <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
@@ -159,16 +159,16 @@
                                 <h3>Useful Links</h3>
                             </div>
                             <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">about</a></li>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="aboutUs">about</a></li>
                                 <li><a href="#">services</a></li>
-                                <li><a href="#">portfolio</a></li>
+                                <li><a href="feedback">Feedback</a></li>
                                 <li><a href="#">Contact</a></li>
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">Our Services</a></li>
-                                <li><a href="#">Expert Team</a></li>
+                                <li><a href="/aboutUs">About us</a></li>
+                                <li><a href="/review">Reviews</a></li>
+                                {% comment %} <li><a href="#">Expert Team</a></li> {% endcomment %}
                                 <li><a href="#">Contact us</a></li>
-                                <li><a href="#">Latest News</a></li>
+                                {% comment %} <li><a href="#">Latest News</a></li> {% endcomment %}
                             </ul>
                         </div>
                     </div>
@@ -217,4 +217,6 @@
    
     
 </body>
-</html>
+</html> 
+
+
