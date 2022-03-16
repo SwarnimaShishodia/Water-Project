@@ -108,4 +108,9 @@ def details(request):
         subs.save()
         messages.success(request,'Details have been added successfully, now make payment')
         return redirect('payment')
+
+def myprofile(request):
+    customer=User.objects.get(email=request.user.email)
+    print(customer)
+    return render(request,'myprofile.html')
     

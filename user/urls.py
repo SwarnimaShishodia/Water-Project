@@ -15,5 +15,6 @@ urlpatterns = [
     path('subscribe/payment', views.user_payment,name='payment'),
     path('plan', views.user_plan,name='plan'),
     path('subscribe/subscribe', views.details,name='subscribedetails'),
-    path('reviews', views.reviews,name="reviews")
+    path('reviews', views.reviews,name="reviews"),
+    path('myprofile', views.myprofile,name="profile"),
 ]
